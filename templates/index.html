@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargador YouTube MP3/MP4</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Downloader</h1>
+        <p>Descarga audio (MP3) o video (MP4) desde cualquier URL de YouTube.</p>
+        
+        <input type="text" id="youtube-url" placeholder="Pega aquí la URL de YouTube..." required>
+        
+        <div class="buttons">
+            <button onclick="startDownload('mp3')" id="btn-mp3">Descargar MP3</button>
+            <button onclick="startDownload('mp4')" id="btn-mp4">Descargar MP4</button>
+        </div>
+
+        <div id="status-area" class="status-box">
+            <p id="status-message">Esperando URL...</p>
+        </div>
+        
+        <div id="download-link" class="download-link-box" style="display: none;">
+            <a href="#" id="final-link" target="_blank" class="download-button">
+                ✅ Descarga Completa. Clic para guardar.
+            </a>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
